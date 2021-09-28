@@ -79,7 +79,7 @@ public class BouquetOfFlowersService extends Util implements BouquetOfFlowersDao
     public void update(BouquetOfFlowers bouquetOfFlowers) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "UPDATE FLOWERS SET FLOWERSCOUNT=?, PRICE=?,  WHERE NAMEFLOWER=?";
+        String sql = "UPDATE BOUQUETOFFLOWERS SET FLOWERSCOUNT=?, PRICE=?,  WHERE NAMEFLOWER=?";
 
         try {
             preparedStatement = connection.prepareStatement(sql);

@@ -43,37 +43,37 @@ public class FlowerService extends Util implements FlowerDao {
     }
 
 
-//    @Override
-//    public List<Flowers> getAll() throws SQLException {
-//
-//        List<Flowers> flowerList = new ArrayList<>();
-//
-//        Statement statement = null;
-//        try {
-//       statement= connection.createStatement();
-//            String sql = "SELECT FLOWERSID, PRICE, NAMEFLOWER, NUMBER FROM FLOWERS;";
-//            ResultSet resultSet = statement.executeQuery(sql);
-//            while (resultSet.next()) {
-//                Flowers flower = new Flowers(;
-//                flower.setFlowersId(resultSet.getInt("FLOWERSID"));
-//                flower.setPrice(resultSet.getInt("PRICE"));
-//                flower.setNameFlower(resultSet.getString("NAMEFLOWER"));
-//                flower.setNumber(resultSet.getInt("NUMBER"));
-//
-//                flowerList.add(flower);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (statement != null) {
-//                statement.close();
-//            }
-//            if (connection != null) {
-//                connection.close();
-//            }
-//        }
-//        return flowerList;
-//    }
+    @Override
+    public List<Flowers> getAll() throws SQLException {
+
+        List<Flowers> flowerList = new ArrayList<>();
+
+        Statement statement = null;
+        try {
+       statement= connection.createStatement();
+            String sql = "SELECT FLOWERSID, PRICE, NAMEFLOWER, NUMBER FROM FLOWERS;";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                Flowers flower = new Flowers();
+                flower.setFlowersId(resultSet.getInt("FLOWERSID"));
+                flower.setPrice(resultSet.getInt("PRICE"));
+                flower.setNameFlower(resultSet.getString("NAMEFLOWER"));
+                flower.setNumber(resultSet.getInt("NUMBER"));
+
+                flowerList.add(flower);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
+        return flowerList;
+    }
 
     @Override
     public Flowers getById(Integer id) throws SQLException {

@@ -9,7 +9,7 @@ public interface FlowerDao{
     void add(Flowers flower) throws SQLException;
 
 
-    //List<Flowers> getAll() throws SQLException;
+    List<Flowers> getAll() throws SQLException;
 
     Flowers getById(Integer id) throws SQLException;
 

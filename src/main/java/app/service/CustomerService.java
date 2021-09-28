@@ -16,7 +16,7 @@ public class CustomerService extends Util implements CustomerDao {
     public void add(Customer customer) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO BOUQUET (CUSTOMERNAME, CUSTOMERPHONENUMBER,CUSTOMEREMAIL) VALUES( ?, ?,?)";
+        String sql = "INSERT INTO CUSTOMER (CUSTOMERNAME, CUSTOMERPHONENUMBER,CUSTOMEREMAIL) VALUES( ?, ?,?)";
         try {
             preparedStatement = connection.prepareStatement(sql);
 

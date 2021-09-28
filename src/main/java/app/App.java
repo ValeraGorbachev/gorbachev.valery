@@ -1,9 +1,7 @@
 package app;
 
-import app.entity.Bouquet;
-import app.entity.Flowers;
-import app.service.BouquetService;
-import app.service.FlowerService;
+import app.entity.*;
+import app.service.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,6 +10,10 @@ public class App {
     public static void main(String[] args) {
         FlowerService flowerService = new FlowerService();
         BouquetService bouquetService=new BouquetService();
+        BouquetOfFlowersService bouquetOfFlowersService=new BouquetOfFlowersService();
+        CustomerService customerService=new CustomerService();
+        EmployeeService employeeService=new EmployeeService();
+        ItemsService itemsService=new ItemsService();
 
 
 
@@ -23,6 +25,16 @@ public class App {
 
         Bouquet bouquet = new Bouquet("Bridal bouquet",30);
 
+        Employee employee=new Employee();
+        employee.setEmployeeAddress("karla marksa");
+        employee.setEmployeeName("Dmitri");
+        employee.setEmployeePhone(1234567);
+        employee.setPosition("trainee");
+
+        Items items=new Items();
+        items.setItemName("postcards");
+        items.setItemPrice(14);
+
 
 
 
@@ -30,7 +42,11 @@ public class App {
 
       try {
 
-          bouquetService.add(bouquet);
+
+         itemsService.add(items);
+         itemsService.getById(1);
+
+
 
 
 

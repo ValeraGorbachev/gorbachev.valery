@@ -16,17 +16,17 @@ public class EmployeeService extends Util implements EmployeeDao {
 
 
 
-        String sql = "INSERT INTO EMPLOYEE( EMPLOYEEID, EMPLOYEENAME, EMPLOYEEPHONE,EMPLOYEEADDRESSPOSITION) VALUES ( ?, ?, ?,?,?);";
+        String sql = "INSERT INTO EMPLOYEE(  EMPLOYEENAME, EMPLOYEEPHONE,EMPLOYEEADDRESS,POSITION) VALUES ( ?, ?, ?,?);";
 
         try {
             preparedStatement = connection.prepareStatement(sql);
 
 
-            preparedStatement.setInt(1, employee.getEmployeeId());
-            preparedStatement.setString(2, employee.getEmployeeName());
+
+            preparedStatement.setString(1, employee.getEmployeeName());
+            preparedStatement.setInt(2, employee.getEmployeePhone());
             preparedStatement.setString(3, employee.getEmployeeAddress());
-            preparedStatement.setInt(3, employee.getEmployeePhone());
-            preparedStatement.setString(3, employee.getPosition());
+            preparedStatement.setString(4, employee.getPosition());
 
 
             preparedStatement.executeUpdate();

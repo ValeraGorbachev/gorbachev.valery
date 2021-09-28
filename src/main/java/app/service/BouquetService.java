@@ -43,7 +43,7 @@ public class BouquetService extends Util implements BouquetDao {
     public Bouquet getById(Integer id) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "SELECT BOUQUETNAME,BOUQUETPRICE FROM FLOWERS WHERE BOUQUETID=?;";
+        String sql = "SELECT BOUQUETNAME,BOUQUETPRICE FROM BOUQUET WHERE BOUQUETID=?";
 
        Bouquet bouquet=new Bouquet();
         try {
