@@ -13,7 +13,7 @@ public class Bouquet {
     }
 
 
-    public Bouquet(){
+    public Bouquet() {
 
     }
 

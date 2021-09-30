@@ -33,11 +33,13 @@ public class BouquetOfFlowers {
     public void setPrice(Integer price) {
         this.price = price;
     }
+
     @Override
     public int hashCode() {
         int result = nameFlowers != null ? nameFlowers.hashCode() : 0;
         result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + (flowersCount != null ? flowersCount.hashCode() : 0);;
+        result = 31 * result + (flowersCount != null ? flowersCount.hashCode() : 0);
+        ;
         return result;
     }
 
@@ -50,8 +52,7 @@ public class BouquetOfFlowers {
 
         if (!Objects.equals(nameFlowers, bouquetOfFlowers.nameFlowers)) return false;
         if (!Objects.equals(price, bouquetOfFlowers.price)) return false;
-        return  (!Objects.equals(flowersCount, bouquetOfFlowers.flowersCount)) ;
-
+        return (!Objects.equals(flowersCount, bouquetOfFlowers.flowersCount));
 
 
     }

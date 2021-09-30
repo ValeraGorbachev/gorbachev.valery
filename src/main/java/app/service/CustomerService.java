@@ -1,93 +1,37 @@
 package app.service;
 
-import app.controller.Util;
+import app.Util.Util;
+import app.dao.Dao;
+import app.entity.Bouquet;
 import app.entity.Customer;
-import app.jdbc.CustomerDao;
+import app.dao.CustomerDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CustomerService extends Util implements CustomerDao {
-    Connection connection=getConnection();
-
+public class CustomerService implements Dao <Customer>{
     @Override
     public void add(Customer customer) throws SQLException {
-        PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO CUSTOMER (CUSTOMERNAME, CUSTOMERPHONENUMBER,CUSTOMEREMAIL) VALUES( ?, ?,?)";
-        try {
-            preparedStatement = connection.prepareStatement(sql);
+    }
 
-            preparedStatement.setString(1, customer.getCustomerName());
-            preparedStatement.setInt(2,  customer.getCustomerPhoneNumber());
-            preparedStatement.setString(3, customer.getCustomerEmail());
-
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-        }
+    @Override
+    public List<Customer> getAll() throws SQLException {
+        return null;
     }
 
     @Override
     public void update(Customer customer) throws SQLException {
 
-        PreparedStatement preparedStatement = null;
-
-        String sql = "UPDATE CUSTOMER SET CUSTOMERNAME=?, CUSTOMERPHONENUMBER=?, CUSTOMEREMAIL=?  WHERE CUSTOMERNAME=?;";
-
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-
-
-            preparedStatement.setString(1, customer.getCustomerName());
-            preparedStatement.setString(2, customer.getCustomerEmail());
-            preparedStatement.setInt(3,  customer.getCustomerPhoneNumber());
-
-
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-        }
     }
 
     @Override
     public void delete(Customer customer) throws SQLException {
-        PreparedStatement preparedStatement = null;
-
-        String sql = "DELETE FROM CUSTOMER WHERE CUSTOMERNAME=?";
-
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-
-            preparedStatement.setString(1, customer.getCustomerName());
-
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-        }
 
     }
 }
+
