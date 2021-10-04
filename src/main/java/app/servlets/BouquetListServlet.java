@@ -28,7 +28,7 @@ public class BouquetListServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        req.setAttribute("Bouquets", bouquetList);
+        req.setAttribute("bouquetList", bouquetList);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/bouquetList.jsp");
         requestDispatcher.forward(req, resp);
     }
