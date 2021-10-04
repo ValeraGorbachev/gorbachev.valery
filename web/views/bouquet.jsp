@@ -1,20 +1,44 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Shop Flowers</title>
+    <title>addBouquet</title>
 </head>
 <body>
-<h2>Here u can create u personal web page on the best platform)))</h2>
-<form action="bouquet" method="post">
-    <input type="text" name="userIdInput" value=""/>
-    <input type="text" name="userNameInput" value=""/>
-    <input type="number" name="userAgeInput" value=""/>
+<div><h1>Add your Bouquet</h1>
 
-    <button type="submit">Save</button>
-</form>
-<form action="bouquetList" method="get">
-    <button type="submit">Cancel</button>
-</form>
+    <div>
+        <%
+            if (request.getAttribute("bouquetId") != null &&
+                    request.getAttribute("bouquetName") != null &&
+                    request.getAttribute("bouquetPrice") != null
+            ) {
+                out.print("<p>Bouquet '" + request.getAttribute("bouquetId") + "' added!</p>");
+            }
+        %>
+    </div>
 
+    <div>
+        <h2>Add Bouquet</h2>
+    </div>
+    <div>
+        <form method="post">
+
+            <label>Id:
+                <input type="text" name="bouquetId"><br/>
+            </label>
+            <label>Name:
+                <input type="text" name="bouquetName"><br/>
+            </label>
+
+            <label>Price:
+                <input type="text" name="bouquetPrice"><br/>
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        <button onclick="location.href='/'">Back to main</button>
+    </div>
+</div>
 </body>
 </html>

@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/index.xhtml" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/views/add.jsp" value="file://$PROJECT_DIR$/web/views" />
         <entry key="file://$PROJECT_DIR$/web/views/bouquetlist.jsp" value="file://$PROJECT_DIR$/web/views" />
       </map>
     </option>

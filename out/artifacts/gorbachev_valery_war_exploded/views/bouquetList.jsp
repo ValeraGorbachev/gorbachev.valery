@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="app.entity.Bouquet" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -9,41 +10,30 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Title</title>
+  <title>Bouquets</title>
 </head>
 <body>
-<table border="6">
+<table>
   <tr>
-    <th>bouquetId</th>
-    <th>bouquetName</th>
-    <th>bouquetPrice</th>
+    <th>Bouquet Id</th>
+    <th>Bouquet Name</th>
+    <th>Bouquet Price</th>
+    <th>   </th>
   </tr>
-  <c:forEach items="${bouquetlist}" var="bouquet">
-    <tr>
-      <td>${bouquet.getBouquetId()}</td>
-      <td>${bouquet.getBouquetName()}</td>
-      <td>${bouquet.getBouquetPrice}</td>
-      <td>
-        <form action="bouquetList" method="get">
-          <input type="hidden" name="UserIdParam" value="${bouquet.getBouquetId()}"/>
-          <button type="submit">Delete</button>
-        </form>
-      </td>
-      <td>
-        <form action="bouquetId" method="get">
-          <br>
-          <label>name</label>
-          <input type="hidden" name="BouquetIdParam" value="${bouquet.getBouquetId}" />
-          <input type="hidden" name="BouquetNameParam" value="${bouquet.getBouquetName()}" />
-          <input type="hidden" name="BouquetPriceParam" value="${bouquet.getBouquetPrice}" />/>
-          <button type="submit">Edit</button>
-        </form>
-      </td>
-    </tr>
-  </c:forEach>
+
+  <%
+    List<Bouquet> bouquets = (List<Bouquet>) request.getAttribute("Bouquets");
+    if (bouquets != null && !bouquets.isEmpty()) {
+      for (Bouquet b : bouquets) {
+        out.print("<tr>");
+        out.print("<td>" + b.getBouquetId() + "</td>");
+        out.print("<td>" + b.getBouquetName() + "</td>");
+        out.print("<td>" + b.getBouquetPrice() + "</td>");
+
+      }
+    } else out.println("<p> There are no car yet! </p>");
+  %>
 </table>
-<form action="bouquetadd" method="get">
-  <button type="submit">Add new User</button>
-</form>
+
 </body>
 </html>

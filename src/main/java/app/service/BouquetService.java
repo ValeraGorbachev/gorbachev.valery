@@ -5,7 +5,6 @@ import app.dao.Dao;
 import app.entity.Bouquet;
 import app.dao.BouquetDao;
 import app.entity.Flowers;
-import app.model.Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

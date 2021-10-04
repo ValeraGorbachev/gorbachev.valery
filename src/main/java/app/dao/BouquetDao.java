@@ -15,7 +15,7 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
     static final String SQL_LIST = "SELECT * FROM BOUQUET";
     static final String SQL_GETBYID = "SELECT * FROM BOUQUET WHERE BOUQUETID=?";
     static final String SQL_UPDATE = "UPDATE BOUQUET SET BOUQUETNAME=?, BOUQUETPRICE=?  WHERE  BOUQUETID=?;";
-    static final String SQL_DELETE = "DELETE FROM BOUQUET WHERE BOUQUETID=?;";
+    static final String SQL_DELETE = "DELETE  FROM BOUQUET WHERE BOUQUETID=?;";
 
 
 

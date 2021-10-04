@@ -43,7 +43,7 @@ public class App {
 
         try {
 
-        bouquetDao.delete(bouquet);
+
            List<Bouquet> bouquetList=bouquetDao.getAll();
            for(Bouquet b:bouquetList)
                System.out.println(b);

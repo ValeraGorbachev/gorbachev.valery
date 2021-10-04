@@ -17,6 +17,12 @@ public class Bouquet {
 
     }
 
+    public Bouquet(Integer bouquetId, String bouquetName, Integer bouquetPrice) {
+        this.bouquetId = bouquetId;
+        this.bouquetName = bouquetName;
+        this.bouquetPrice = bouquetPrice;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -37,6 +43,7 @@ public class Bouquet {
                 ", bouquetName='" + bouquetName + '\'' +
                 ", bouquetPrice=" + bouquetPrice +
                 '}';
+
     }
 
     public Integer getBouquetId() {

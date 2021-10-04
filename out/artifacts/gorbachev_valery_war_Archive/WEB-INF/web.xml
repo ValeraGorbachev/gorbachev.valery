@@ -1,0 +1,30 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>bouquetList</servlet-name>
+        <servlet-class>app.servlets.BouquetListServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bouquetList</servlet-name>
+        <url-pattern>/bouquetList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>bouquet</servlet-name>
+        <servlet-class>app.servlets.BouquetAddServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bouquet</servlet-name>
+        <url-pattern>/bouquet</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>
