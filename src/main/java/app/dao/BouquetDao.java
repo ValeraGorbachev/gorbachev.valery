@@ -76,10 +76,10 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
 
     @Override
     public void update(Bouquet bouquet) throws SQLException {
-        Connection connection = getConnection();
-        PreparedStatement preparedStatement = null;
+        try (Connection connection = getConnection()) {
+            PreparedStatement preparedStatement = null;
 
-        try {
+
             preparedStatement = connection.prepareStatement(SQL_UPDATE);
 
 
@@ -89,15 +89,7 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
 
 
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
+
         }
 
     }

@@ -1,16 +1,9 @@
 package app.service;
 
-import app.Util.Util;
 import app.dao.Dao;
-import app.entity.Bouquet;
 import app.entity.Customer;
-import app.dao.CustomerDao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerService implements Dao <Customer>{

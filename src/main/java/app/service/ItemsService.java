@@ -1,16 +1,9 @@
 package app.service;
 
-import app.Util.Util;
 import app.dao.Dao;
-import app.entity.Employee;
 import app.entity.Items;
-import app.dao.ItemsDao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ItemsService implements Dao<Items> {

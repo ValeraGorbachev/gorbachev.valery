@@ -2,25 +2,6 @@
 <web-app>
     <display-name>Flower Shop</display-name>
 
-    <servlet>
-        <servlet-name>bouquetList</servlet-name>
-        <servlet-class>app.servlets.BouquetListServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>bouquetList</servlet-name>
-        <url-pattern>/bouquetList</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>bouquet</servlet-name>
-        <servlet-class>app.servlets.BouquetAddServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>bouquet</servlet-name>
-        <url-pattern>/bouquet</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>bouquetUpdate</servlet-name>
@@ -42,6 +23,25 @@
         <url-pattern>/bouquetDelete</url-pattern>
     </servlet-mapping>
 
+
+
+<!--    <filter>-->
+<!--        <filter-name>cookiefilter</filter-name>-->
+<!--        <filter-class>app.Filters.CookieFilter</filter-class>-->
+<!--    </filter>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>cookiefilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+
+    <welcome-file-list>
+
+        <welcome-file>home</welcome-file>
+
+        <welcome-file>/views/loginView.jsp </welcome-file>
+
+    </welcome-file-list>
 
 
 </web-app>

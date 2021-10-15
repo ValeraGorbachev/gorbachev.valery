@@ -45,8 +45,12 @@
 <html>
 <head>
   <title>Title</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
+<body class="w3-light-grey">
+<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
+
 <table border="6">
   <tr>
   <tr>
@@ -64,7 +68,7 @@
         <br>
         <form action="bouquetDelete" method="get">
           <input type="hidden" name="BouquetIdParam" value="${bouquet.getBouquetId()}"/>
-          <button type="submit">Delete</button>
+          <button class="w3-btn w3-hover-green w3-round-large" type="submit">Delete</button>
         </form>
       </td>
       <td>
@@ -75,7 +79,7 @@
           <input type="hidden" name="BouquetNameParam" value="${bouquet.getBouquetName()}" />
           <input type="hidden" name="BouquetPriceParam" value="${bouquet.getBouquetPrice()}" />
 
-          <button type="submit">Update</button>
+          <button  class="w3-btn w3-hover-green w3-round-large" type="submit">Update</button>
         </form>
       </td>
     </tr>
@@ -83,7 +87,7 @@
 </table>
 
 <form action="bouquet" method="get">
-  <button type="submit">Add new Bouquet</button>
+  <button class="w3-btn w3-hover-green w3-round-large" type="submit">Add new Bouquet</button>
 </form>
 
 </body>

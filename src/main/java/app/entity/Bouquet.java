@@ -1,8 +1,13 @@
 package app.entity;
 
+import org.hibernate.annotations.Table;
+
+import javax.persistence.*;
 import java.util.Objects;
 
+
 public class Bouquet {
+
     private Integer bouquetId;
     private String bouquetName;
     private Integer bouquetPrice;

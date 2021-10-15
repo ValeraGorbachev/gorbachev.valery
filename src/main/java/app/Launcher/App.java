@@ -1,6 +1,7 @@
 package app.Launcher;
 
 import app.dao.BouquetDao;
+import app.dao.UserDao;
 import app.entity.*;
 import app.service.*;
 
@@ -11,6 +12,13 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         BouquetDao bouquetDao=new BouquetDao();
+        UserDao userDao=new UserDao();
+
+        User user= new User();
+        user.setUserName("vasya");
+        user.setUserRole("admin");
+        user.setPassword("12345");
+        user.setEmail("qwerty");
 
         Flowers flower = new Flowers();
 
@@ -43,9 +51,9 @@ public class App {
 
         try {
 
-
-           List<Bouquet> bouquetList=bouquetDao.getAll();
-           for(Bouquet b:bouquetList)
+            System.out.println(userDao.findUser("Kirill","12345"));
+           List<User> userList=userDao.getAll();
+           for(User b:userList)
                System.out.println(b);
 
         } catch (SQLException e) {
@@ -54,3 +62,4 @@ public class App {
 
     }
 }
+
