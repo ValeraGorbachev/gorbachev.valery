@@ -13,12 +13,15 @@ public class App {
     public static void main(String[] args) {
         BouquetDao bouquetDao=new BouquetDao();
         UserDao userDao=new UserDao();
+        BouquetService bouquetService=new BouquetService();
+        UserService userService= new UserService();
 
         User user= new User();
         user.setUserName("vasya");
         user.setUserRole("admin");
         user.setPassword("12345");
         user.setEmail("qwerty");
+
 
         Flowers flower = new Flowers();
 
@@ -47,18 +50,23 @@ public class App {
         customer.setCustomerPhoneNumber(3456);
         customer.setCustomerEmail("@hjabfkha");
         customer.setCustomerName("Dmitri Gordon");
-
-
         try {
-
-            System.out.println(userDao.findUser("Kirill","12345"));
-           List<User> userList=userDao.getAll();
-           for(User b:userList)
-               System.out.println(b);
-
+            System.out.println(userService.findUser("Grem","4321"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
+//        try {
+//
+//            System.out.println(userDao.findUser("Kirill","12345"));
+//           List<User> userList=userDao.getAll();
+//           for(User b:userList)
+//               System.out.println(b);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
     }
 }

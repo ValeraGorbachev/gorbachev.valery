@@ -1,8 +1,14 @@
 package app.entity;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String userName;
     private String password;
@@ -31,6 +37,7 @@ public class User {
         this.userName = userName;
         this.password = password;
     }
+
 
 
     public int getId() {

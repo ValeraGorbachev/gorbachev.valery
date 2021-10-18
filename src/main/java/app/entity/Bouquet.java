@@ -1,21 +1,27 @@
 package app.entity;
 
-import org.hibernate.annotations.Table;
-
 import javax.persistence.*;
 import java.util.Objects;
 
-
+@Entity
+@Table(name = "bouquet")
 public class Bouquet {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer bouquetId;
+    @Column(name = "bouquetName")
     private String bouquetName;
     private Integer bouquetPrice;
+
+
+
 
     public Bouquet(String bouquetName, Integer bouquetPrice) {
         this.bouquetName = bouquetName;
         this.bouquetPrice = bouquetPrice;
     }
+
 
 
     public Bouquet() {
