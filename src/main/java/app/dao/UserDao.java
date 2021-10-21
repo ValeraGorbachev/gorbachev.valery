@@ -3,8 +3,11 @@ package app.dao;
 import app.Util.HibernateSessionFactoryUtil;
 import app.Util.Util;
 import app.entity.User;
+
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 
@@ -48,9 +51,18 @@ public class UserDao extends Util implements Dao<User> {
         session.close();
     }
 
-    public User getUserByName(String userName) throws SQLException {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, userName);
+//    public User getUserByName(String userName) throws SQLException {
+//        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+//
+//        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, userName);
+//
+//    }
+
+    public User findUserById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
     }
+
+
 //
 //    public static User findUser(String userName, String password) throws SQLException {
 //        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -61,20 +73,22 @@ public class UserDao extends Util implements Dao<User> {
 //        if (results.size() == 1) {
 //            return user;
 //        }
-//        return null;
-//    }
-//}
+//        return user;
+//    }}
+
 
 
     public static User findUser(String userName, String password) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Query<User> query = session.createQuery("FROM User  WHERE userName  = :patternUserName AND password = :patternPassword");
+
+        Query query = session.createQuery("FROM User WHERE userName = :patternUserName AND password = :patternPassword");
         query.setParameter("patternUserName", userName);
         query.setParameter("patternPassword", password);
         User user;
-        user = query.uniqueResult();
+        user = (User) query.uniqueResult();
         return user;
-    }}
+    }
+}
 
 
 //    static final String SQL_INSERT = "INSERT INTO USER (  USERNAME, PASSWORD,EMAIL,USERROLE) VALUES ( ?, ?,?,?);";
@@ -219,44 +233,44 @@ public class UserDao extends Util implements Dao<User> {
 //        }
 //        return null;
 //    }
+
+
+//    public String authenticateUser(User user) throws SQLException {
+//        String userName = user.getUserName();
+//        String password = user.getPassword();
+//        String userRole=user.getUserRole();
+//        Connection connection = getConnection();
+//        PreparedStatement preparedStatement = null;
+//        String userNameDB = "";
+//        String passwordDB = "";
+//        String roleDB = "";
+//        String sql = "SELECT userName, password, userRole FROM user " + "WHERE userName =?   AND password  =? ";
+//        preparedStatement = connection.prepareStatement(sql);
+//        ResultSet resultSet = preparedStatement.executeQuery();
+//        try
+//        {
+//            while(resultSet.next())
+//            {
+//                userNameDB = resultSet.getString("userName");
+//                passwordDB = resultSet.getString("password");
+//                roleDB=resultSet.getString("userRole");
 //
 //
-////    public String authenticateUser(User user) throws SQLException {
-////        String userName = user.getUserName();
-////        String password = user.getPassword();
-////        String userRole=user.getUserRole();
-////        Connection connection = getConnection();
-////        PreparedStatement preparedStatement = null;
-////        String userNameDB = "";
-////        String passwordDB = "";
-////        String roleDB = "";
-////        String sql = "SELECT userName, password, userRole FROM user " + "WHERE userName =?   AND password  =? ";
-////        preparedStatement = connection.prepareStatement(sql);
-////        ResultSet resultSet = preparedStatement.executeQuery();
-////        try
-////        {
-////            while(resultSet.next())
-////            {
-////                userNameDB = resultSet.getString("userName");
-////                passwordDB = resultSet.getString("password");
-////                roleDB=resultSet.getString("userRole");
-////
-////
-////                if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
-////                    return "Admin_Role";
-////
-////                else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("user"))
-////                    return "User_Role";
-////            }
-////        }
-////        catch(SQLException e)
-////        {
-////            e.printStackTrace();
-////        }
-////        return "Invalid user credentials";
-////    }
+//                if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
+//                    return "Admin_Role";
 //
-//
+//                else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("user"))
+//                    return "User_Role";
+//            }
+//        }
+//        catch(SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
+//        return "Invalid user credentials";
+//    }
+
+
 //    public User getUserByName(String userName) throws SQLException {
 //        try (Connection connection = getConnection()) {
 //            PreparedStatement preparedStatement;

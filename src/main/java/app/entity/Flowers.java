@@ -1,8 +1,12 @@
 package app.entity;
 
+import javax.persistence.*;
 import java.util.Objects;
-
+@Entity
+@Table(name = "flowers")
 public class Flowers {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer flowersId;
     private Integer price;
     private String nameFlower;

@@ -3,6 +3,7 @@ package app.servlets;
 import app.Util.AppUtils;
 import app.dao.UserDao;
 import app.entity.User;
+import app.service.UserService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,7 +25,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/views/userInfo.jsp");
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/views/loginView.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -35,7 +36,9 @@ public class LoginServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
 
+
         UserDao userDao = new UserDao();
+        UserService userService= new UserService();
         try {
 
 
@@ -52,11 +55,7 @@ public class LoginServlet extends HttpServlet {
             dispatcher.forward(request, response);
             return;
         }
-        try {
-            user = userDao.getUserByName(userName);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        user = userDao.findUserById(user.getId());
         String userRole = user.getUserRole();
 
         String name = user.getUserName();

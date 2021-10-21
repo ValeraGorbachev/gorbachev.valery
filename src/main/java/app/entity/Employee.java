@@ -1,8 +1,12 @@
 package app.entity;
 
+import javax.persistence.*;
 import java.util.Objects;
-
+@Entity
+@Table(name = "customer")
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer employeeId;
     private String employeeName;
     private Integer employeePhone;

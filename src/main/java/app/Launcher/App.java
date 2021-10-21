@@ -42,20 +42,19 @@ public class App {
         items.setItemName("postcards");
         items.setItemPrice(14);
 
-        BouquetOfFlowers bouquetOfFlowers = new BouquetOfFlowers();
-        bouquetOfFlowers.setNameFlowers("Rose");
-        bouquetOfFlowers.setFlowersCount(4);
-        bouquetOfFlowers.setPrice(14);
+//        BouquetOfFlowers bouquetOfFlowers = new BouquetOfFlowers();
+//        bouquetOfFlowers.setNameFlowers("Rose");
+//        bouquetOfFlowers.setFlowersCount(4);
+//        bouquetOfFlowers.setPrice(14);
         Customer customer = new Customer();
         customer.setCustomerPhoneNumber(3456);
         customer.setCustomerEmail("@hjabfkha");
         customer.setCustomerName("Dmitri Gordon");
         try {
-            System.out.println(userService.findUser("Grem","4321"));
+            System.out.println(userService.findUser("vasya","12345"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
 
 //        try {
 //

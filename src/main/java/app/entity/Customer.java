@@ -1,8 +1,40 @@
 package app.entity;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "customer")
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer customerId;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", customerPhoneNumber=" + customerPhoneNumber +
+                ", customerEmail='" + customerEmail + '\'' +
+                '}';
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+
+    public Customer(Integer customerId, String customerName, Integer customerPhoneNumber, String customerEmail) {
+        this.customerId = customerId;
+        this.customerName = customerName;
+        this.customerPhoneNumber = customerPhoneNumber;
+        this.customerEmail = customerEmail;
+    }
+
     private String customerName;
     private Integer customerPhoneNumber;
     private String customerEmail;
@@ -35,15 +67,6 @@ public class Customer {
 
     public String getCustomerEmail() {
         return customerEmail;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "customerName='" + customerName + '\'' +
-                ", customerPhoneNumber=" + customerPhoneNumber +
-                ", customerEmail='" + customerEmail + '\'' +
-                '}';
     }
 
     @Override

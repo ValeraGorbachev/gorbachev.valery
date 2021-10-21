@@ -16,9 +16,6 @@
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/bouquetList'">List Bouquets
         </button>
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/bouquet'">Add Bouquet</button>
-        <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/bouquetDelete'">Delete Bouquet
-        </button>
-
         <%
             String userName = (String) session.getAttribute("userName");
             if (userName==null) {

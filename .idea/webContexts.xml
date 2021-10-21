@@ -8,6 +8,7 @@
         <entry key="file://$PROJECT_DIR$/web/views/add.jsp" value="file://$PROJECT_DIR$/web/views" />
         <entry key="file://$PROJECT_DIR$/web/views/bouquet.jsp" value="file://$PROJECT_DIR$/web/views" />
         <entry key="file://$PROJECT_DIR$/web/views/bouquetDelete.jsp" value="file://$PROJECT_DIR$/web/views" />
+        <entry key="file://$PROJECT_DIR$/web/views/bouquetList.jsp" value="file://$PROJECT_DIR$/web/views" />
         <entry key="file://$PROJECT_DIR$/web/views/bouquetlist.jsp" value="file://$PROJECT_DIR$/web/views" />
       </map>
     </option>

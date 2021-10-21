@@ -25,6 +25,9 @@
     </div>
     <div>
         <form method="post">
+            <label>Id:
+                <input type="text" name="bouquetId"><br/>
+            </label>
 
             <label>Name:
                 <input type="text" name="bouquetName"><br/>

@@ -13,15 +13,6 @@
         <url-pattern>/bouquetUpdate</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>bouquetDelete</servlet-name>
-        <servlet-class>app.servlets.BouquetDeleteServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>bouquetDelete</servlet-name>
-        <url-pattern>/bouquetDelete</url-pattern>
-    </servlet-mapping>
 
 
 

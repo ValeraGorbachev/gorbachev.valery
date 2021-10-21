@@ -4,7 +4,12 @@ import app.Util.HibernateSessionFactoryUtil;
 import app.Util.Util;
 import app.entity.Bouquet;
 
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -118,7 +123,7 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
 //        }
 //    }
 //    }
-
+//
     @Override
     public void add(Bouquet bouquet) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -147,6 +152,16 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
     public void delete(Bouquet bouquet) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
+        session.delete(bouquet);
+        tx1.commit();
+        session.close();
+    }
+
+    public void deleteById(Integer bouquetId) throws SQLException{
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        Bouquet bouquet = session.get(Bouquet.class, bouquetId);
+
         session.delete(bouquet);
         tx1.commit();
         session.close();

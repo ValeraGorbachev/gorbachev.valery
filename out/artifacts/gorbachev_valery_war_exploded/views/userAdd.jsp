@@ -4,7 +4,6 @@
     <title>Create new Account</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <div><h1>Create new Account</h1>
@@ -44,11 +43,10 @@
                 </label>
                 <button type="submit">Submit</button>
             </form>
-        </div>
+
         <div>
             <button onclick="location.href='/index.jsp'">Back to main</button>
         </div>
-    </div>
 </body>
 </html>
 
