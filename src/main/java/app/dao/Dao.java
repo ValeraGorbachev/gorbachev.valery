@@ -1,8 +1,9 @@
 package app.dao;
 
+import org.springframework.context.annotation.Bean;
+
 import java.sql.SQLException;
 import java.util.List;
-
 public interface Dao<T> {
 
     void add(T t) throws SQLException;

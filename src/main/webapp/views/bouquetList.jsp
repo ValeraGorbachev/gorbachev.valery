@@ -26,7 +26,7 @@
         <td>${bouquet.bouquetPrice}</td>
 
         <td>
-          <form action="deleteBouquet" method="get">
+          <form action="/deleteBouquet" method="get">
             <input type="hidden" name="BouquetIdParam" value="${bouquet.getBouquetId()}"/>
             <button class="w3-btn w3-hover-green w3-round-large" type="submit">Delete</button>
           </form>
@@ -53,7 +53,7 @@
     </c:forEach>
   </table>
 
-  <form action="bouquet" method="get">
+  <form action="/bouquet" method="get">
     <button class="w3-btn w3-hover-green w3-round-large" type="submit">Add new Bouquet</button>
   </form>
 

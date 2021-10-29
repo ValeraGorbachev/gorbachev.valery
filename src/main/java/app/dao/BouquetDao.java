@@ -3,20 +3,18 @@ package app.dao;
 import app.Util.HibernateSessionFactoryUtil;
 import app.Util.Util;
 import app.entity.Bouquet;
-
-import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import java.util.List;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
+
+@Repository
 public class BouquetDao extends Util implements Dao<Bouquet> {
-//    static final String SQL_INSERT = "INSERT INTO BOUQUET (BOUQUETNAME,BOUQUETPRICE) VALUES( ?, ?)";
+    //    static final String SQL_INSERT = "INSERT INTO BOUQUET (BOUQUETNAME,BOUQUETPRICE) VALUES( ?, ?)";
 //    static final String SQL_LIST = "SELECT * FROM BOUQUET";
 //    static final String SQL_GETBYID = "SELECT * FROM BOUQUET WHERE BOUQUETID=?";
 //    static final String SQL_UPDATE = "UPDATE BOUQUET SET BOUQUETNAME=?, BOUQUETPRICE=?  WHERE  BOUQUETID=?;";
@@ -135,7 +133,7 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
 
     @Override
     public List<Bouquet> getAll() throws SQLException {
-        List<Bouquet> bouquetList= (List<Bouquet>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Bouquet ").list();
+        List<Bouquet> bouquetList = (List<Bouquet>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Bouquet ").list();
         return bouquetList;
     }
 
@@ -157,7 +155,7 @@ public class BouquetDao extends Util implements Dao<Bouquet> {
         session.close();
     }
 
-    public void deleteById(Integer bouquetId) throws SQLException{
+    public void deleteById(Integer bouquetId) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         Bouquet bouquet = session.get(Bouquet.class, bouquetId);

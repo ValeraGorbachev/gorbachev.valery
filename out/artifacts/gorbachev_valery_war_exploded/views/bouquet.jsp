@@ -25,17 +25,17 @@
     <div>
         <form method="post">
 
-            <label>Id:
-                <input type="text" name="bouquetId"><br/>
-            </label>
-            <label>Name:
+
+
+
+        <label>Name:
                 <input type="text" name="bouquetName"><br/>
             </label>
 
             <label>Price:
                 <input type="text" name="bouquetPrice"><br/>
             </label>
-            <button type="submit">Submit</button>
+            <button  type="submit">Submit</button>
         </form>
     </div>
     <div>

@@ -3,10 +3,13 @@ package app.service;
 import app.dao.BouquetDao;
 import app.dao.Dao;
 import app.entity.Bouquet;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Service
 public class BouquetService implements Dao<Bouquet> {
 
     private BouquetDao bouquetDao= new BouquetDao();
@@ -20,7 +23,7 @@ public class BouquetService implements Dao<Bouquet> {
     }
 
     @Override
-    public List<Bouquet> getAll() {
+    public  List<Bouquet> getAll() {
         try {
             return bouquetDao.getAll();
         } catch (SQLException e) {
@@ -45,7 +48,16 @@ public class BouquetService implements Dao<Bouquet> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }}
+    }
+    public void deleteById(int id){
+        try {
+            bouquetDao.deleteById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
 
 //
 //    @Override
