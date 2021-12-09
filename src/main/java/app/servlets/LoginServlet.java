@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
             dispatcher.forward(request, response);
             return;
         }
-        user = userDao.findUserById(user.getId());
+        user = userDao.findUserById(user.getUserId());
         String userRole = user.getUserRole();
 
         String name = user.getUserName();
@@ -67,13 +67,7 @@ public class LoginServlet extends HttpServlet {
                 redirectId = Integer.parseInt(request.getParameter("redirectId"));
             } catch (Exception e) {
             }
-          //  String requestUri = AppUtils.getRedirectAfterLoginUrl(request.getSession(), redirectId);
 
-//            if (requestUri != null) {
-//                response.sendRedirect(requestUri);
-//            } else {
-//                response.sendRedirect(request.getContextPath() + "/views/userInfo.jsp");
-//            }
             if (userRole.equals("admin")) {
                 request.getRequestDispatcher("indexAdmin.jsp").forward(request, response);
             } else request.getRequestDispatcher("index.jsp").forward(request, response);

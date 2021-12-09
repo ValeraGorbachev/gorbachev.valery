@@ -22,22 +22,11 @@ public class BouquetController {
         return mav;
     }
 
-
-//    @RequestMapping(value = "/getAllBouquets", method = RequestMethod.GET)
-//    public String getBouquets(Model model) {
-//        BouquetService bouquetService = new BouquetService();
-//        List<Bouquet> bouquetList = bouquetService.getAll();
-//        model.addAttribute("bouquetList", bouquetList);
-//        return "views/bouquetList";
-//    }
-
-
     @GetMapping("/bouquet")
     public String createBouquet() {
         System.out.println(231);
         return "/views/bouquet";
     }
-
 
     @PostMapping("/bouquet")
     public String addBouquet(@ModelAttribute("bouquet") Bouquet bouquet) {
@@ -48,17 +37,15 @@ public class BouquetController {
             e.printStackTrace();
         }
         System.out.println(2345678);
-        return "redirect:/";
+        return "redirect:/getAllBouquets";
     }
 
     @GetMapping("/deleteBouquet")
     public String deleteBouquet(@RequestParam("BouquetIdParam") int bouquetId) {
         BouquetService bouquetService = new BouquetService();
         bouquetService.deleteById(bouquetId);
-        return "redirect:/views/bouquetList ";
+        return "redirect:/getAllBouquets";
     }
-
-
 
     @GetMapping(value = "/bouquetUpdate")
     public ModelAndView getPersonEaditPage(@RequestParam("BouquetIdParam") String bouquetId,
@@ -86,7 +73,7 @@ public class BouquetController {
         Bouquet bouquet= new Bouquet(bouquetUpdatedId,bouquetUpdateName,bouquetUpdatePrice);
         BouquetService bouquetService= new BouquetService();
         bouquetService.update(bouquet);
-        return "redirect:/";
+        return"redirect:/getAllBouquets";
     }
 
 }

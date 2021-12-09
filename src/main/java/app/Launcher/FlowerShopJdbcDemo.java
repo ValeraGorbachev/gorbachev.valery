@@ -25,7 +25,6 @@ public class FlowerShopJdbcDemo {
         System.out.println("Executing statement...");
         statement = connection.createStatement();
 
-
         String sql = "SELECT * FROM flowers";
 
         ResultSet resultSet = statement.executeQuery(sql);

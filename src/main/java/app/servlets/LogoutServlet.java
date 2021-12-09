@@ -13,12 +13,10 @@ public class LogoutServlet extends HttpServlet {
 
         request.getRequestDispatcher("/views/loginView.jsp").forward(request, response);
 
-
         HttpSession session=request.getSession();
         session.invalidate();
 
         System.out.println("You are successfully logged out!");
-
 
     }
 }

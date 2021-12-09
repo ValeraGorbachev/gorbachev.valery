@@ -24,7 +24,6 @@
 
             <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/login'">login</button>
 
-
         </div>
         <%
         }else{
@@ -36,9 +35,6 @@
         <% }
         %>
 
-
-
-<%--                <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/login'">login</button>--%>
                 <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/userAdd'">Create new User</button>
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/logout'">Logout</button>
     </div>

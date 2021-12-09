@@ -8,17 +8,6 @@
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
 <div><h1>Update your Bouquet</h1>
 
-<%--    <div>--%>
-<%--        <%--%>
-<%--            if (request.getAttribute("bouquetId") != null &&--%>
-<%--                    request.getAttribute("bouquetName") != null &&--%>
-<%--                    request.getAttribute("bouquetPrice") != null--%>
-<%--            ) {--%>
-<%--                out.print("<p>Bouquet '" + request.getAttribute("bouquetId") + "' updated!</p>");--%>
-<%--            }--%>
-<%--        %>--%>
-<%--    </div>--%>
-
     <div>
         <h2>Update Bouquet</h2>
     </div>

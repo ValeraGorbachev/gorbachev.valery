@@ -5,20 +5,6 @@
          version="4.0">
     <display-name>Flower Shop</display-name>
 
-
-<!--    <servlet>-->
-<!--        <servlet-name>bouquetUpdate</servlet-name>-->
-<!--        <servlet-class>app.servlets.BouquetUpdateServlet</servlet-class>-->
-<!--    </servlet>-->
-
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>bouquetUpdate</servlet-name>-->
-<!--        <url-pattern>/bouquetUpdate</url-pattern>-->
-<!--    </servlet-mapping>-->
-
-
-
-
     <welcome-file-list>
 
         <welcome-file>home</welcome-file>
@@ -37,7 +23,6 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
     </context-param>
-
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>

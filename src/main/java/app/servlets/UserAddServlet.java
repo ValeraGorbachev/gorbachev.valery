@@ -31,7 +31,6 @@ public class UserAddServlet extends HttpServlet{
             String role = req.getParameter("userRole");
             String password = req.getParameter("password");
 
-
             User user= new User ( name, password,email,role);
             UserDao userDao=new UserDao();
             try {

@@ -26,8 +26,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
         String name = req.getParameter("bouquetName");
         String price = req.getParameter("bouquetPrice");
 
-
-
         Bouquet bouquet = new Bouquet (Integer.parseInt(id), name,Integer.parseInt(price));
         BouquetDao bouquetDao = new BouquetDao();
         try {

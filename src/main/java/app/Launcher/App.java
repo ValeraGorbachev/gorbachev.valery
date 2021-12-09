@@ -22,7 +22,6 @@ public class App {
         user.setPassword("12345");
         user.setEmail("qwerty");
 
-
         Flowers flower = new Flowers();
 
         flower.setPrice(6);
@@ -42,10 +41,6 @@ public class App {
         items.setItemName("postcards");
         items.setItemPrice(14);
 
-//        BouquetOfFlowers bouquetOfFlowers = new BouquetOfFlowers();
-//        bouquetOfFlowers.setNameFlowers("Rose");
-//        bouquetOfFlowers.setFlowersCount(4);
-//        bouquetOfFlowers.setPrice(14);
         Customer customer = new Customer();
         customer.setCustomerPhoneNumber(3456);
         customer.setCustomerEmail("@hjabfkha");
@@ -55,17 +50,6 @@ public class App {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-//        try {
-//
-//            System.out.println(userDao.findUser("Kirill","12345"));
-//           List<User> userList=userDao.getAll();
-//           for(User b:userList)
-//               System.out.println(b);
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
 
     }
 }

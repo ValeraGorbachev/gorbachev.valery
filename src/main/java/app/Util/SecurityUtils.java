@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 public class SecurityUtils {
 
-    // Проверить требует ли данный 'request' входа в систему или нет.
     public static boolean isSecurityPage(HttpServletRequest request) {
         String urlPattern = UrlPatternUtils.getUrlPattern(request);
 
@@ -25,7 +24,6 @@ public class SecurityUtils {
         return false;
     }
 
-    // Проверить имеет ли данный 'request' подходящую роль?
     public static boolean hasPermission(HttpServletRequest request) {
         String urlPattern = UrlPatternUtils.getUrlPattern(request);
 

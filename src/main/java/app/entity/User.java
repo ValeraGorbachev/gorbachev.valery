@@ -9,7 +9,7 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer userId;
     private String userName;
     private String password;
     private String email;
@@ -19,7 +19,7 @@ public class User {
     }
 
     public User(Integer id, String userName, String password, String email, String userRole) {
-        this.id = id;
+        this.userId = id;
         this.userName = userName;
         this.password = password;
         this.email = email;
@@ -38,14 +38,12 @@ public class User {
         this.password = password;
     }
 
-
-
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
@@ -79,7 +77,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id=" + userId +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
@@ -92,12 +90,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(email, user.email) && Objects.equals(userRole, user.userRole);
+        return userId == user.userId && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(email, user.email) && Objects.equals(userRole, user.userRole);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, password, email, userRole);
+        return Objects.hash(userId, userName, password, email, userRole);
     }
 
     public void setUserRole(String userRole) {

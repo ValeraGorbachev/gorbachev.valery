@@ -21,16 +21,10 @@ public class UrlPatternUtils {
             if (mappings.contains(urlPattern)) {
                 return true;
             }
-
         }
         return false;
     }
 
-    // servletPath:
-    // ==> /spath
-    // ==> /spath/*
-    // ==> *.ext
-    // ==> /
     public static String getUrlPattern(HttpServletRequest request) {
         ServletContext servletContext = request.getServletContext();
         String servletPath = request.getServletPath();

@@ -34,8 +34,6 @@ public class UserListServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
         request.setAttribute("userList", userList);
 
         RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/views/userList.jsp");

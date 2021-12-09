@@ -37,10 +37,6 @@ public class UserService implements Dao<User> {
         return usersDao.findUser(userName, password);
     }
 
-//    public User getUserByName(String userName) throws SQLException {
-//        return usersDao.getUserByName(userName);
-//    }
-
     public User findUserById(int id) {
         return usersDao.findUserById(id);
     }

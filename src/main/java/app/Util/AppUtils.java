@@ -14,13 +14,10 @@ public class AppUtils {
     private static final Map<Integer, String> id_uri_map = new HashMap<Integer, String>();
     private static final Map<String, Integer> uri_id_map = new HashMap<String, Integer>();
 
-    // Сохранить информацию пользователя в Session.
     public static void storeLoginedUser(HttpSession session, User loginedUser) {
-        // На JSP можно получить доступ через ${loginedUser}
         session.setAttribute("loginedUser", loginedUser);
     }
 
-    // Получить информацию пользователя, сохраненную в Session.
     public static User getLoginedUser(HttpSession session) {
         User loginedUser = (User) session.getAttribute("loginedUser");
         return loginedUser;
